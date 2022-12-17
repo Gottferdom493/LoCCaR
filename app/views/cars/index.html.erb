@@ -1,5 +1,8 @@
 <h1>Ici l'index de toutes les Voitures</h1>
 
-
-<%= link_to "Allez voir", new_car_booking_path(car) %>
-<%# <%= link_to "Ajoute un Item", new_car_booking_path %> %>
+  <% @cars.each do |car| %>
+    <p><%= car.marque %></p>
+    <p><%= car.modele %></p>
+    <p><%= car.adresse %></p>
+<%= link_to "Ajoute un Item", new_car_booking_path(car) %>
+  <% end %>
