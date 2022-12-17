@@ -2,7 +2,6 @@
 
   <% @cars.each do |car| %>
     <p><%= car.marque %></p>
-    <p><%= car.modele %></p>
-    <p><%= car.adresse %></p>
+    <p><%= car.prix %>€</p>
 <%= link_to "Ajoute un Item", new_car_booking_path(car) %>
   <% end %>

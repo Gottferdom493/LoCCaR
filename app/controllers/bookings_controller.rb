@@ -10,7 +10,7 @@ class BookingsController < ApplicationController
     @car = Car.find(params[:car_id])
     @booking.car = @car
     if @booking.save
-      redirect_to car_bookings_path(), notice: "Comment has been added"
+      redirect_to cars_path(), notice: "Comment has been added"
     else
       render :new
     end
