@@ -3,7 +3,6 @@ class BookingsController < ApplicationController
   def new
     @car = Car.find(params[:car_id])
     @booking = Booking.new
-    @bookings = Booking.all
   end
 
   def create

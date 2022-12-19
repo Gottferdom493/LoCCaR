@@ -16,8 +16,10 @@
   <p><%= @car.prix %>€</p>
 
 <% @car.bookings.each do |booking| %>
-  <p><%= booking.start_date %></p>
-  <p><%= booking.end_date %></p>
+  <% if booking.user == current_user %>
+    <p><%= booking.start_date %></p>
+    <p><%= booking.end_date %></p>
+  <% end %>
 <% end %>
 
 <%= link_to 'Back', cars_path %>
