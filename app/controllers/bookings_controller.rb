@@ -10,8 +10,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @car = Car.find(params[:car_id])
     @booking.car = @car
-    if @booking.save!
-      redirect_to new_car_booking_path(car), notice: "Booking has been added"
+    @booking.user = current_user
+    if @booking.save
+      redirect_to new_car_booking_path(), notice: "Booking has been added"
     else
       render :new
     end
