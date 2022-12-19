@@ -3,5 +3,9 @@
   <% @cars.each do |car| %>
     <p><%= car.marque %></p>
     <p><%= car.prix %>€</p>
-<%= link_to "Ajoute un Item", new_car_booking_path(car) %>
+    <%= link_to "Ajoute un Item", new_car_booking_path(car) %>
+
   <% end %>
+
+
+<%# <%= link_to "Ajoute un Item", car_path(car) %>

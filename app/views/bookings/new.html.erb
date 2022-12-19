@@ -1,24 +1,23 @@
 <h1>coucou</h1>
 
-			<%= form_for [@car, @booking] do |f| %>
+<%= form_for [@car, @booking] do |f| %>
 
-				<%= f.date_field :start_date, placeholder: "Ajout le nom" %>
+  <%= f.date_field :start_date, placeholder: "Ajout le nom" %>
 
-				<%=f.date_field :end_date, placeholder: "Ajout l'adresse" %>
+  <%=f.date_field :end_date, placeholder: "Ajout l'adresse" %>
 
-				<%= f.submit :Création %>
+  <%= f.submit :Création %>
 
-			<% end %>
+<% end %>
 
-<% car.@bookings.each do |booking| %>
+  <p><%= @car.marque %></p>
+  <p><%= @car.modele %></p>
+  <p><%= @car.adresse %></p>
+  <p><%= @car.prix %>€</p>
+
+<% @car.bookings.each do |booking| %>
   <p><%= booking.start_date %></p>
   <p><%= booking.end_date %></p>
 <% end %>
-
-    <p><%= @car.marque %></p>
-    <p><%= @car.modele %></p>
-    <p><%= @car.adresse %></p>
-    <p><%= @car.prix %>€</p>
-
 
 <%= link_to 'Back', cars_path %>
